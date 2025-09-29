@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* E-commerce Design System - Premium Shopping Experience */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 15%;
+    
+    /* Premium Navy & Gold Palette */
+    --primary: 220 40% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 220 30% 35%;
+    
+    /* Luxury Gold Accents */
+    --accent: 42 85% 55%;
+    --accent-foreground: 220 40% 20%;
+    --accent-light: 42 75% 70%;
+    
+    /* Sophisticated Grays */
+    --secondary: 220 10% 95%;
+    --secondary-foreground: 220 25% 25%;
+    --muted: 220 15% 97%;
+    --muted-foreground: 220 10% 55%;
+    
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    --border: 220 15% 90%;
+    --input: 220 15% 96%;
+    --ring: 42 85% 55%;
+    
+    /* Interactive States */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 70% 45%;
+    --warning: 38 95% 55%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+    
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 40% 20%), hsl(220 35% 30%));
+    --gradient-accent: linear-gradient(135deg, hsl(42 85% 55%), hsl(42 75% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 10% 95%), hsl(0 0% 100%));
+    
+    /* Elegant Shadows */
+    --shadow-soft: 0 2px 20px -8px hsl(220 25% 15% / 0.1);
+    --shadow-medium: 0 8px 30px -12px hsl(220 25% 15% / 0.15);
+    --shadow-strong: 0 20px 40px -20px hsl(220 25% 15% / 0.2);
+    --shadow-accent: 0 8px 25px -8px hsl(42 85% 55% / 0.25);
+    
+    /* Smooth Transitions */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 220 10% 95%;
+    
+    --primary: 42 85% 55%;
+    --primary-foreground: 220 30% 8%;
+    --primary-light: 42 75% 65%;
+    
+    --accent: 220 20% 25%;
+    --accent-foreground: 220 10% 95%;
+    --accent-light: 220 15% 35%;
+    
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 10% 85%;
+    --muted: 220 25% 12%;
+    --muted-foreground: 220 10% 65%;
+    
+    --card: 220 25% 10%;
+    --card-foreground: 220 10% 95%;
+    --border: 220 20% 18%;
+    --input: 220 20% 15%;
+    --ring: 42 85% 55%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 220 30% 8%;
+    --success: 142 70% 50%;
+    --warning: 38 95% 60%;
+    
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 10% 95%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(220 30% 8%), hsl(220 25% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(42 85% 55%), hsl(42 75% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 12%), hsl(220 30% 8%));
+    
+    --shadow-soft: 0 2px 20px -8px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -12px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 20px 40px -20px hsl(0 0% 0% / 0.5);
+    --shadow-accent: 0 8px 25px -8px hsl(42 85% 55% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Component Styles */
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-slow {
+    transition: var(--transition-slow);
+  }
+}

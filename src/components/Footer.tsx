@@ -135,9 +135,9 @@ const Footer = () => {
         <div className="border-t border-primary-light/20 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/60">
           <p>&copy; 2024 Luxe. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-accent transition-fast">Privacy Policy</a>
-            <a href="#" className="hover:text-accent transition-fast">Terms of Service</a>
-            <a href="#" className="hover:text-accent transition-fast">Cookie Policy</a>
+            <Link to="/privacy-policy" className="hover:text-accent transition-fast">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-accent transition-fast">Terms of Service</Link>
+            <Link to="/cookie-policy" className="hover:text-accent transition-fast">Cookie Policy</Link>
           </div>
         </div>
       </div>

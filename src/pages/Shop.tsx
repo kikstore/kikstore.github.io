@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProductGrid from "@/components/ProductGrid";
@@ -10,23 +10,50 @@ import { Filter } from "lucide-react";
 const Shop = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'all');
+  const location = useLocation();
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSort, setSelectedSort] = useState('featured');
 
-  // Update category when URL parameter changes
+  // Update category based on URL path or search params
   useEffect(() => {
+    const path = location.pathname;
     const categoryParam = searchParams.get('category');
+    
     if (categoryParam) {
       setSelectedCategory(categoryParam);
+    } else if (path === '/handbags') {
+      setSelectedCategory('handbags');
+    } else if (path === '/jewelry') {
+      setSelectedCategory('jewelry');
+    } else if (path === '/accessories') {
+      setSelectedCategory('accessories');
+    } else if (path === '/fragrance') {
+      setSelectedCategory('fragrance');
+    } else if (path === '/sale') {
+      setSelectedCategory('sale');
+    } else if (path === '/new-arrivals') {
+      setSelectedCategory('new');
     } else {
       setSelectedCategory('all');
     }
-  }, [searchParams]);
+  }, [location.pathname, searchParams]);
 
   const handleCategoryChange = (value: string) => {
     setSelectedCategory(value);
     if (value === 'all') {
       navigate('/shop');
+    } else if (value === 'handbags') {
+      navigate('/handbags');
+    } else if (value === 'jewelry') {
+      navigate('/jewelry');
+    } else if (value === 'accessories') {
+      navigate('/accessories');
+    } else if (value === 'fragrance') {
+      navigate('/fragrance');
+    } else if (value === 'sale') {
+      navigate('/sale');
+    } else if (value === 'new') {
+      navigate('/new-arrivals');
     } else {
       navigate(`/shop?category=${value}`);
     }
@@ -38,7 +65,16 @@ const Shop = () => {
 
   // Get page title based on category
   const getPageTitle = () => {
+    const path = location.pathname;
     const categoryParam = searchParams.get('category');
+    
+    if (path === '/handbags') return 'Handbags';
+    if (path === '/jewelry') return 'Jewelry';
+    if (path === '/accessories') return 'Accessories';
+    if (path === '/fragrance') return 'Fragrance';
+    if (path === '/sale') return 'Sale Items';
+    if (path === '/new-arrivals') return 'New Arrivals';
+    
     if (!categoryParam || categoryParam === 'all') return 'Shop Collection';
     
     const categoryNames: { [key: string]: string } = {
@@ -54,7 +90,16 @@ const Shop = () => {
   };
 
   const getPageDescription = () => {
+    const path = location.pathname;
     const categoryParam = searchParams.get('category');
+    
+    if (path === '/handbags') return 'Elegant handbags and purses crafted with the finest materials.';
+    if (path === '/jewelry') return 'Exquisite jewelry pieces to complement your style.';
+    if (path === '/accessories') return 'Premium accessories to complete your luxury look.';
+    if (path === '/fragrance') return 'Sophisticated fragrances for the discerning individual.';
+    if (path === '/sale') return 'Exclusive luxury items at special prices.';
+    if (path === '/new-arrivals') return 'The latest additions to our luxury collection.';
+    
     if (!categoryParam || categoryParam === 'all') {
       return 'Discover our curated selection of luxury fashion and accessories.';
     }

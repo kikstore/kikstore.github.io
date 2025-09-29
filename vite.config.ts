@@ -7,6 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   base: '/',
   server: {
+    historyApiFallback: true,
     host: "0.0.0.0",
     port: 5000,
     strictPort: true,

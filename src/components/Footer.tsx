@@ -14,12 +14,12 @@ const Footer = () => {
   ];
 
   const categories = [
-    { name: "Handbags", href: "/shop?category=handbags" },
-    { name: "Jewelry", href: "/shop?category=jewelry" },
-    { name: "Accessories", href: "/shop?category=accessories" },
-    { name: "Fragrance", href: "/shop?category=fragrance" },
-    { name: "Sale Items", href: "/shop?category=sale" },
-    { name: "New Arrivals", href: "/shop?category=new" },
+    { name: "Handbags", href: "/handbags" },
+    { name: "Jewelry", href: "/jewelry" },
+    { name: "Accessories", href: "/accessories" },
+    { name: "Fragrance", href: "/fragrance" },
+    { name: "Sale Items", href: "/sale" },
+    { name: "New Arrivals", href: "/new-arrivals" },
   ];
 
   return (
